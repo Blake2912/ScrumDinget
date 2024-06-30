@@ -2,12 +2,12 @@
 //  Theme.swift
 //  ScrumDinget
 //
-//  Created by Shubha G on 29/06/24.
+//  Created by Varun on 29/06/24.
 //
 
 import SwiftUI
 
-enum Theme: String {
+enum Theme: String, CaseIterable, Identifiable {
     case bubblegum
     case buttercup
     case indigo
@@ -36,5 +36,8 @@ enum Theme: String {
     }
     var name: String {
         rawValue.capitalized
+    }
+    var id: String {
+        name
     }
 }

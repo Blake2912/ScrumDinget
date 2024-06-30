@@ -2,13 +2,13 @@
 //  DetailEditView.swift
 //  ScrumDinget
 //
-//  Created by Shubha G on 30/06/24.
+//  Created by Varun on 30/06/24.
 //
 
 import SwiftUI
 
 struct DetailEditView: View {
-    @State private var scrum = DailyScrum.emptyScrum
+    @Binding var scrum : DailyScrum
     @State private var newAttendeeName = ""
     
     
@@ -47,6 +47,7 @@ struct DetailEditView: View {
                     }
                     .disabled(newAttendeeName.isEmpty)
                 }
+                ThemePicker(selection: $scrum.theme)
             }
         }
     }
@@ -54,6 +55,6 @@ struct DetailEditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView()
+        DetailEditView(scrum: .constant(DailyScrum.sampleData[0]))
     }
 }

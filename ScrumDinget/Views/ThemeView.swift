@@ -2,17 +2,25 @@
 //  ThemeView.swift
 //  ScrumDinget
 //
-//  Created by Shubha G on 30/06/24.
+//  Created by Varun on 30/06/24.
 //
 
 import SwiftUI
 
 struct ThemeView: View {
+    let theme: Theme
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(theme.name)
+            .padding(4)
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            .background(theme.mainColor)
+            .foregroundColor(theme.accentColor)
+            .clipShape(RoundedRectangle(cornerRadius: 4))
     }
 }
 
-#Preview {
-    ThemeView()
+struct ThemeView_Previews: PreviewProvider {
+    static var previews: some View {
+        ThemeView(theme: .buttercup)
+    }
 }

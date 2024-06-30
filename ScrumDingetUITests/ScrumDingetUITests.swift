@@ -2,7 +2,7 @@
 //  ScrumDingetUITests.swift
 //  ScrumDingetUITests
 //
-//  Created by Shubha G on 29/06/24.
+//  Created by Varun on 29/06/24.
 //
 
 import XCTest
